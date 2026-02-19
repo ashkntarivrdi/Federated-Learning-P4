@@ -24,7 +24,7 @@ def list_pcap_files(directory):
     return sorted(
         os.path.join(directory, f)
         for f in os.listdir(directory)
-        if f.endswith(".pcap")
+        if f.endswith("_in.pcap")
     )
 
 
