@@ -9,9 +9,9 @@ from scapy.utils import RawPcapReader
 
 # Hardcoded input PCAP files (edit these paths if your files are elsewhere)
 PCAP_FILES = [
-    "./pcap/s1-eth1_in.pcap",
-    "./pcap/s1-eth2_in.pcap",
-    "./pcap/s1-eth3_in.pcap",
+    "./pcap_10/s1-eth1_in.pcap",
+    "./pcap_10/s1-eth2_in.pcap",
+    "./pcap_10/s1-eth3_in.pcap",
 ]
 
 # Hardcoded output image path
@@ -61,6 +61,8 @@ def main():
     plt.ylabel("Total Packets")
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.tight_layout()
+    plt.xticks(epochs)
+    plt.yticks(range(120, max(packet_counts) + 70, max(1, max(packet_counts) // 10)))
     plt.savefig(OUTPUT_PLOT, dpi=150)
 
     print("Saved plot to:", OUTPUT_PLOT)
