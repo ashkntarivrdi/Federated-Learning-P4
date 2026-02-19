@@ -7,8 +7,13 @@ TYPE_AGGREGATION = 0x1234
 
 class Aggregation(Packet):
     name = "Aggregation"
-    fields_desc = []
-    # TODO: Add fields for the aggregation packet
+    fields_desc = [
+        BitField("round_id", 0, 16),
+        BitField("worker_id", 0, 16),
+        BitField("chunk_id", 0, 16),
+        BitField("total_chunks", 0, 16),
+        BitField("chunk_len", 0, 16),
+    ]
 
 
 bind_layers(Ether, Aggregation, type=TYPE_AGGREGATION)
