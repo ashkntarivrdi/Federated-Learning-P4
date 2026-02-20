@@ -25,7 +25,7 @@ CHUNK_SIZE = 10
 WEIGHT_SCALE = 10000
 INTER_PACKET_GAP_SEC = 0.001
 # Fixed redundancy keeps packet count equal for every worker in every round.
-REDUNDANCY_FACTOR = 2
+REDUNDANCY_FACTOR = 1
 # Let slower workers finish local training before anybody starts sending.
 PRE_SEND_BARRIER_SEC = 5
 AGGREGATION_WAIT_TIMEOUT_SEC = 120
